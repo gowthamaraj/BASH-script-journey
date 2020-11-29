@@ -92,16 +92,41 @@ echo "PATH currently contains: ${PATH//:/, }"
  - "${url^^[ht]}"
  
 Remove the shortest string that matches the pattern if it's at the start of the value.
+
 Remove the longest string that matches the pattern if it's at the start of the value.
+
 Remove the shortest string that matches the pattern if it's at the end of the value.
+
 Remove the longest string that matches the pattern if it's at the end of the value.
+
 Replace the first string that matches the pattern with the replacement.
+
 Replace each string that matches the pattern with the replacement.
+
 Replace the string that matches the pattern at the beginning of the value with the replacement.
+
 Replace the string that matches the pattern at the end of the value with the replacement.
 Expand the length of the value (in bytes).
+
 Expand a part of the value, starting at start, length bytes long. You can even count start from the end rather than the beginning by using a (space followed by a) negative value.
+
 Expand the transformed value, either upper-casing or lower-casing the first or all characters that match the pattern. You can omit the pattern to match any character.
+
+### Shell Initialization
+When you start an interactive bash session, bash will prepare itself for usage by reading a few initialization commands from different files on your system. You can use these files to tell bash how to behave. One in particular is intended to give you the opportunity to export variables into the environment. The file is called .bash_profile and it lives in your home directory. There's a good chance that you don't have this file yet; if this is the case, you can just create the file and bash will find it the next time it goes looking for it.
+
+At the very end of your ~/.bash_profile, you should have the command source ~/.bashrc. That's because when .bash_profile exists, bash behaves a little curious in that it stops looking for its standard shell initialization file ~/.bashrc. The source command remedies this oddity.
+
+Note that if there is no ~/.bash_profile file, bash will try to read from ~/.profile instead, if it exists. The latter is a generic shell profile configuration file, which is also read by other shells. You can opt to put your environment configuration there instead, but if you do, you need to be aware that you should limit yourself to POSIX sh syntax and not use any bash-specific shell syntax in the file. POSIX sh syntax is similar to bash but it is beyond the scope of this guide.
+
+### Special Parameters
+$0
+$@
+$#
+$-
+$$
+$!
+
 
 
 
